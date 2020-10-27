@@ -74,3 +74,5 @@ C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\WebApp
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\WebApplicationMvcDemo\bin\EntityFramework.xml
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\WebApplicationMvcDemo\bin\EntityFramework.SqlServer.xml
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\WebApplicationMvcDemo\obj\Debug\WebApplicationMvcDemo.csprojAssemblyReference.cache
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\WebApplicationMvcDemo\bin\BusinessLayer.dll
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\WebApplicationMvcDemo\bin\BusinessLayer.pdb

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,15 +14,41 @@ namespace WebApplicationMvcDemo.Controllers
         public ActionResult Details(int id)
         {
             EmployeeContext empContext = new EmployeeContext();
-            Employee employee = empContext.Employees.Single(emp => emp.Id == id);
+            Models.Employee employee = empContext.Employees.Single(emp => emp.Id == id);
             return View(employee);
         }
 
-        public ActionResult EmployeeList()
+        /// <summary>
+        /// List of all employees
+        /// </summary>
+        public ActionResult EmployeeList(int deptId)
         {
             EmployeeContext empContext = new EmployeeContext();
-           List<Employee> employees = empContext.Employees.ToList();
+           List<Models.Employee> employees = empContext.Employees.Where(emp => emp.DepartmentId == deptId).ToList();
             return View(employees);
         }
+
+        // using business object
+
+        /// <summary>
+        /// using business object class  //Get
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult GetEmployees()
+        {
+            EmployeeBusinessLayer emp = new EmployeeBusinessLayer();
+            List<BusinessLayer.Employee> employees = emp.Employees.ToList();
+            return View(employees);
+        }
+/// <summary>
+/// This controller action method will only respond to get request of this url
+/// </summary>
+/// <returns></returns>
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
     }
 }

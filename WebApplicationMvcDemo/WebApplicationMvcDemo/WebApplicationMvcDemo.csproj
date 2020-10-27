@@ -100,11 +100,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +117,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employe\Details.cshtml" />
     <Content Include="Views\Employe\EmployeeList.cshtml" />
+    <Content Include="Views\Department\Departments.cshtml" />
+    <Content Include="Views\Employe\GetEmployees.cshtml" />
+    <Content Include="Views\Employe\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -124,6 +129,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{f10c190d-4bdb-4fb3-b7f0-6eda272f42fe}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

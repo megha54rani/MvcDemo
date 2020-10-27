@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace WebApplicationMvcDemo.Models
+namespace BusinessLayer
 {
-    [Table("Employee")]
     public class Employee
     {
         public int Id { get; set; }
@@ -17,7 +16,6 @@ namespace WebApplicationMvcDemo.Models
 
         public string City { get; set; }
 
-        public int DepartmentId { get; set; }
-
+        public DateTime DateOfBirth { get; set; }
     }
 }

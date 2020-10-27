@@ -1,19 +1,17 @@
-﻿@model WebApplicationMvcDemo.Models.Employee
+﻿@model IEnumerable<WebApplicationMvcDemo.Models.Employee>
 
-@{
-    Layout = null;
-    //hello test 
-}
+@using WebApplicationMvcDemo.Models;
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>EmployeeList</title>
-</head>
-<body>
-    <div> 
+    <div style="font-family:arial"> 
+        <h2>Employee List</h2>
+        <ul>
+            @foreach (Employee emp in @Model)
+            {
+                <li>
+                  @Html.ActionLink(emp.Name, "Details", new { id = emp.Id })
+                </li>
+            }
+        </ul>
+        @Html.ActionLink("Back to departments", "Departments","Department")
+        
     </div>
-</body>
-</html>

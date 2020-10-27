@@ -1,0 +1,6 @@
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.pdb
