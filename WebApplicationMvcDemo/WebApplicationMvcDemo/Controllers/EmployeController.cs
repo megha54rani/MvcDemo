@@ -24,7 +24,7 @@ namespace WebApplicationMvcDemo.Controllers
         public ActionResult EmployeeList(int deptId)
         {
             EmployeeContext empContext = new EmployeeContext();
-           List<Models.Employee> employees = empContext.Employees.Where(emp => emp.DepartmentId == deptId).ToList();
+            List<Models.Employee> employees = empContext.Employees.Where(emp => emp.DepartmentId == deptId).ToList();
             return View(employees);
         }
 
@@ -40,14 +40,70 @@ namespace WebApplicationMvcDemo.Controllers
             List<BusinessLayer.Employee> employees = emp.Employees.ToList();
             return View(employees);
         }
-/// <summary>
-/// This controller action method will only respond to get request of this url
-/// </summary>
-/// <returns></returns>
+        /// <summary>
+        /// This controller action method will only respond to get request of this url, On click of create button in this view will wil
+        /// post data back to db, so for that we will call another method with http post attribute
+        /// </summary>
         [HttpGet]
-        public ActionResult Create()
+        [ActionName("Create")]
+        public ActionResult Create_Get()
         {
             return View();
+        }
+
+        /// <summary>
+        /// This will respond to post operation
+        /// this method need form value to ad the value in db
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [ActionName("Create")]
+        public ActionResult Create_Post()
+        {
+            //3. we can also do this without passing any parameter -final
+            BusinessLayer.Employee emp = new BusinessLayer.Employee();  // all properties of emp are null
+            TryUpdateModel(emp);                  // get binded to form values entered
+
+            if (ModelState.IsValid)
+            {
+                EmployeeBusinessLayer ebl = new EmployeeBusinessLayer();
+                ebl.AddEmployee(emp);
+                return RedirectToAction("GetEmployees");
+            }
+            else
+            {
+                return View();
+            }
+
+            //end 3
+
+            //2: using update model concept, also doing validation check for values  - Create(BusinessLayer.Employee emp)
+            //if (ModelState.IsValid)
+            //{
+            //    EmployeeBusinessLayer ebl = new EmployeeBusinessLayer();
+            //    ebl.AddEmployee(emp);
+            //    return RedirectToAction("GetEmployees");
+            //}
+            //else
+            //{
+            //    return View();  // return create view  
+            //}
+            // end 2
+
+            // 1.Not good idea Redundat code -  Create(FormCollection formCollection)
+            //BusinessLayer.Employee emp = new BusinessLayer.Employee();
+
+            //emp.Id = Convert.ToInt32(formCollection["Id"]);
+            //emp.Name = formCollection["Name"];
+            //emp.Gender = formCollection["Gender"];
+            //emp.City = formCollection["City"];
+            //emp.DateOfBirth = DateTime.ParseExact(formCollection["DateOfBirth"], "dd/MM/yyyy", null);
+
+            //EmployeeBusinessLayer ebl = new EmployeeBusinessLayer();
+            //ebl.AddEmployee(emp);
+            // return RedirectToAction("GetEmployees");
+            //end 1
+
         }
 
     }
