@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcSampleModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Employee_1" Relationship="MvcSampleModels.FK__Employee___Depar__4CA06362" FromRole="Department" ToRole="Employee_1" />
+  </EntityType>
+  <EntityType Name="Employee_1">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employee_11" Relationship="Self.FK_Employee_1_Employee_1" FromRole="Employee_1" ToRole="Employee_11" />
+    <NavigationProperty Name="Employee_12" Relationship="Self.FK_Employee_1_Employee_1" FromRole="Employee_11" ToRole="Employee_1" />
+    <NavigationProperty Name="Department" Relationship="MvcSampleModels.FK__Employee___Depar__4CA06362" FromRole="Employee_1" ToRole="Department" />
+  </EntityType>
+  <Association Name="FK_Employee_1_Employee_1">
+    <End Role="Employee_1" Type="Self.Employee_1" Multiplicity="1" />
+    <End Role="Employee_11" Type="Self.Employee_1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_1">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Employee_11">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MvcSampleEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Employee_1" EntityType="Self.Employee_1" />
+    <AssociationSet Name="FK_Employee_1_Employee_1" Association="Self.FK_Employee_1_Employee_1">
+      <End Role="Employee_1" EntitySet="Employee_1" />
+      <End Role="Employee_11" EntitySet="Employee_1" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee___Depar__4CA06362" Association="MvcSampleModels.FK__Employee___Depar__4CA06362">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Employee_1" EntitySet="Employee_1" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK__Employee___Depar__4CA06362">
+    <End Type="MvcSampleModels.Department" Role="Department" Multiplicity="1" />
+    <End Type="MvcSampleModels.Employee_1" Role="Employee_1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee_1">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

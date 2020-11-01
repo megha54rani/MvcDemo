@@ -1,0 +1,15 @@
+  insert into employee_1 values(1,'Mark','Male','London',1)
+   insert into employee_1 values(2,'Mark1','Female','Chennai',2)
+    insert into employee_1 values(3,'Mark2','Male','Delhi',2)
+	 insert into employee_1 values(4,'Mark3','Female','Uk',3)
+	  insert into employee_1 values(5,'Mark4','Female','Sydney',2)
+	  
+	  	  delete from Employee_1 where Employeeid=2
+		  
+		   connectionString="server=KOR1085459\SQLEXPRESS; database=MvcSample; integrated Security=SSPI"
+		   
+		   alter table employee_1
+add foreign key(DepartmentId) references department(Id)
+	  
+	  
+	  

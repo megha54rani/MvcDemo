@@ -59,6 +59,11 @@ namespace BusinessLayer
                 SqlCommand command = new SqlCommand("spAddEmployee", con);
                 command.CommandType = CommandType.StoredProcedure;
 
+                SqlParameter paramId = new SqlParameter();
+                paramId.ParameterName = "@Id";
+                paramId.Value = employee.Id;
+                command.Parameters.Add(paramId);
+
                 SqlParameter paramName = new SqlParameter();
                 paramName.ParameterName = "@Name";
                 paramName.Value = employee.Name;
@@ -79,9 +84,61 @@ namespace BusinessLayer
                 paramDateOfBirth.Value = employee.DateOfBirth;
                 command.Parameters.Add(paramDateOfBirth);
 
+                con.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateEmployee(Employee employee)
+        {
+            string connectionString = "server=KOR1085459\\SQLEXPRESS; database=MvcSample; integrated Security=SSPI";
+            using(SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("spUpdateEmployee", con);
+                command.CommandType = CommandType.StoredProcedure;
+
                 SqlParameter paramId = new SqlParameter();
                 paramId.ParameterName = "@Id";
                 paramId.Value = employee.Id;
+                command.Parameters.Add(paramId);
+
+                SqlParameter paramName = new SqlParameter();
+                paramName.ParameterName = "@Name";
+                paramName.Value = employee.Name;
+                command.Parameters.Add(paramName);
+
+                SqlParameter paramGender = new SqlParameter();
+                paramGender.ParameterName = "@Gender";
+                paramGender.Value = employee.Gender;
+                command.Parameters.Add(paramGender);
+
+                SqlParameter paramCity = new SqlParameter();
+                paramCity.ParameterName = "@City";
+                paramCity.Value = employee.City;
+                command.Parameters.Add(paramCity);
+
+                SqlParameter paramDateOfBirth = new SqlParameter();
+                paramDateOfBirth.ParameterName = "@DateOfBirth";
+                paramDateOfBirth.Value = employee.DateOfBirth;
+                command.Parameters.Add(paramDateOfBirth);
+
+                con.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void Delete(int id)
+        {
+            string connectionString = "server=KOR1085459\\SQLEXPRESS; database=MvcSample; integrated Security=SSPI";
+
+            using(SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("spDeleteEmployee", con);
+                command.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter paramId = new SqlParameter();
+                paramId.ParameterName = "@Id";
+                paramId.Value = id;
                 command.Parameters.Add(paramId);
 
                 con.Open();

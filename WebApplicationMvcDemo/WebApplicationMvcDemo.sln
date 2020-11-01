@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationMvcDemo", "We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{F10C190D-4BDB-4FB3-B7F0-6EDA272F42FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcDemoUsingEntityFW", "MvcDemoUsingEntityFW\MvcDemoUsingEntityFW.csproj", "{B5050DFA-10EE-439B-8613-1204D8F57E51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F10C190D-4BDB-4FB3-B7F0-6EDA272F42FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F10C190D-4BDB-4FB3-B7F0-6EDA272F42FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F10C190D-4BDB-4FB3-B7F0-6EDA272F42FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5050DFA-10EE-439B-8613-1204D8F57E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5050DFA-10EE-439B-8613-1204D8F57E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5050DFA-10EE-439B-8613-1204D8F57E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5050DFA-10EE-439B-8613-1204D8F57E51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
