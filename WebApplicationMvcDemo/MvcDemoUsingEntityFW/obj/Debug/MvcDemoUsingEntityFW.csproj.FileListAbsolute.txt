@@ -80,3 +80,4 @@ C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\MvcDem
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\MvcDemoUsingEntityFW\obj\Debug\MvcDemoUsingEntityFW.csproj.CopyComplete
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\MvcDemoUsingEntityFW\obj\Debug\MvcDemoUsingEntityFW.dll
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\MvcDemoUsingEntityFW\obj\Debug\MvcDemoUsingEntityFW.pdb
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\MvcDemoUsingEntityFW\obj\Debug\MvcDemoUsingEntityFW.csprojAssemblyReference.cache

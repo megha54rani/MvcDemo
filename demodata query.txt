@@ -1,15 +1,44 @@
-  insert into employee_1 values(1,'Mark','Male','London',1)
-   insert into employee_1 values(2,'Mark1','Female','Chennai',2)
-    insert into employee_1 values(3,'Mark2','Male','Delhi',2)
-	 insert into employee_1 values(4,'Mark3','Female','Uk',3)
-	  insert into employee_1 values(5,'Mark4','Female','Sydney',2)
+ connectionString="server=KOR1085459\SQLEXPRESS; database=MvcSample; integrated Security=SSPI"
+
+1) inserting values:
+ insert into employee_1 values(1,'Mark','Male','London',1)
+ insert into employee_1 values(2,'Mark1','Female','Chennai',2)
+ insert into employee_1 values(3,'Mark2','Male','Delhi',2)
+insert into employee_1 values(4,'Mark3','Female','Uk',3)
+insert into employee_1 values(5,'Mark4','Female','Sydney',2)
 	  
-	  	  delete from Employee_1 where Employeeid=2
+2) delete from Employee_1 where Employeeid=2
 		  
-		   connectionString="server=KOR1085459\SQLEXPRESS; database=MvcSample; integrated Security=SSPI"
-		   
-		   alter table employee_1
+3) alter table employee_1
 add foreign key(DepartmentId) references department(Id)
+
+4)Showing total employee in each dep, using linq, without adding new table in db, sql query:
+
+select Department.Name, count(*) as total   -// Header 
+             from Employee_1 
+             join Department
+             on 
+             Department.Id = Employee_1.DepartmentId 
+             group by Department.Name   // this will be key column on the basis of which we will group
+
+linq:   var employees = db.Employee_1.Include("Department").
+                GroupBy(x => x.Department.Name)
+                .Select(y => new DepartmentTotal
+                {
+                    Name = y.Key,
+                    Total = y.Count()
+                }).ToList().OrderByDescending(y => y.Total);
+
+
+
+
+
+
+
+
+
+
+
 	  
 	  
 	  

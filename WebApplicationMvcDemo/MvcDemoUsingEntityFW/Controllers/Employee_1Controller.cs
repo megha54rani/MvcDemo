@@ -50,7 +50,7 @@ namespace MvcDemoUsingEntityFW.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EmployeeId,Name,Gender,City,DepartmentId")] Employee_1 employee_1)
         {
-            if(string.IsNullOrEmpty(employee_1.Name))
+            if (string.IsNullOrEmpty(employee_1.Name))
             {
 
                 ModelState.AddModelError("Name", "The Name field is required");
@@ -88,7 +88,7 @@ namespace MvcDemoUsingEntityFW.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Exclude ="Name")] Employee_1 employee)
+        public ActionResult Edit([Bind(Exclude = "Name")] Employee_1 employee)
         {
             Employee_1 employeeFromDb = db.Employee_1.Single(x => x.EmployeeId == employee.EmployeeId);
 
@@ -140,6 +140,28 @@ namespace MvcDemoUsingEntityFW.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+
+        public ActionResult EmployeeByDepartment()
+        {
+            /* Sql query to join and show total
+             select Department.Name, count(*) as total 
+             from Employee_1 
+             join Department
+             on 
+             Department.Id = Employee_1.DepartmentId 
+             group by Department.Name*/
+
+            var employees = db.Employee_1.Include("Department").
+                GroupBy(x => x.Department.Name)
+                .Select(y => new DepartmentTotal
+                {
+                    Name = y.Key,
+                    Total = y.Count()
+                }).ToList().OrderByDescending(y => y.Total);
+
+            return View(employees);
         }
     }
 }

@@ -136,6 +136,7 @@
     <Compile Include="Models\Department.cs">
       <DependentUpon>EmployeeDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DepartmentTotal.cs" />
     <Compile Include="Models\EmployeeDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -214,6 +215,7 @@
     <Content Include="Views\Employee_1\Details.cshtml" />
     <Content Include="Views\Employee_1\Edit.cshtml" />
     <Content Include="Views\Employee_1\Index.cshtml" />
+    <Content Include="Views\Employee_1\EmployeeByDepartment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
