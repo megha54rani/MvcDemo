@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>
+    <h2>HTML helpers demo</h2>
+    <input type="text" id="firstname" value="usingindex" />
+
+    @Html.Label("firstname", "First Name")
+    @Html.TextBox("lastname", "usinghelper",
+        new
+        {
+           style = "background-color:Red;color:blue",
+           title = "Plesae enter your name",
+           @readonly = "true"
+        })
+    <br />
+    @Html.Label("pwd", "Password")
+    @Html.Password("password")
+    <br />
+    @Html.Label("Comments")
+    @Html.TextArea("comments", "", 5, 20, null)
+</div>
