@@ -3,3 +3,6 @@ C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\Busine
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\bin\Debug\WebActivatorEx.dll
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
