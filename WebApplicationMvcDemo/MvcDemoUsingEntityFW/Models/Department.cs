@@ -11,28 +11,11 @@ namespace MvcDemoUsingEntityFW.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    [MetadataTypeAttribute(typeof(DepartmentMetaData))]
+    
     public partial class Department
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Department()
-        {
-            this.Employee_1 = new HashSet<Employee_1>();
-        }
-
         public int Id { get; set; }
         public string Name { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee_1> Employee_1 { get; set; }
+        public Nullable<bool> IsSelected { get; set; }
     }
-
-    public class DepartmentMetaData
-    {
-        [Display(Name = "Department Name")]
-        public string Name { get; set; }
-    }
-
 }

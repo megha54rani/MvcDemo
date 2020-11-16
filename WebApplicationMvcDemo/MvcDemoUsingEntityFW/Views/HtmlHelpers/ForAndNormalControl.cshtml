@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "ForAndNormalControl";
+}
+
+<h2>ForAndNormalControl</h2>
+
+@Html.Label("Company Name")
+@Html.TextBox("Company name",(string)ViewBag.CompanyName)
+
+<br/>
+
+@Html.Label("Departments","Department")
+@Html.DropDownList("Departments", "Select department")
+

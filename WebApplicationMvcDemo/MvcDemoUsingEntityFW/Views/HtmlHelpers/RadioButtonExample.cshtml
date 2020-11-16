@@ -1,0 +1,18 @@
+﻿@model MvcDemoUsingEntityFW.Models.Company
+@{
+    ViewBag.Title = "RadioButtonExample";
+}
+
+<h2>RadioButtonExample</h2>  @*here comes action method name. fot which this view is created*@
+
+@using (Html.BeginForm())
+{
+    foreach (var department in Model.Departments)
+    {
+        @Html.RadioButtonFor(m => m.SelectedDepartment, department.Id) @department.Name
+    }
+    <br />
+    <br />
+    <input type="submit"/ value="Submit">
+}
+

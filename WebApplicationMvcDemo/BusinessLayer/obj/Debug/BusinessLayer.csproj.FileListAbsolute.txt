@@ -6,3 +6,4 @@ C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\Busine
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\MyFolder\Practice codes\ASP.NET\MVC by kudvenkat\WebApplicationMvcDemo\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache

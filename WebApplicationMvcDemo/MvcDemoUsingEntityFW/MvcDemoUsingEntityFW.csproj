@@ -137,8 +137,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Department.cs">
-      <DependentUpon>EmployeeDataModel.tt</DependentUpon>
+      <DependentUpon>Departments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Departments.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Departments.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Departments.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Departments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Departments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Departments.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\DepartmentTotal.cs" />
     <Compile Include="Models\EmployeeDataModel.Context.cs">
@@ -170,6 +186,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Departments.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Departments.edmx</DependentUpon>
+      <LastGenOutput>Departments.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Departments.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Departments.edmx</DependentUpon>
+      <LastGenOutput>Departments.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\EmployeeDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EmployeeDataModel.edmx</DependentUpon>
@@ -188,6 +214,13 @@
     </EntityDeploy>
     <Content Include="Models\EmployeeDataModel.edmx.diagram">
       <DependentUpon>EmployeeDataModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Departments.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Departments.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Departments.edmx.diagram">
+      <DependentUpon>Departments.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -222,6 +255,8 @@
     <Content Include="Views\Employee_1\EmployeeByDepartment.cshtml" />
     <Content Include="Views\Employee_1\Index_ASPX.cshtml" />
     <Content Include="Views\HtmlHelpers\Index.cshtml" />
+    <Content Include="Views\HtmlHelpers\ForAndNormalControl.cshtml" />
+    <Content Include="Views\HtmlHelpers\RadioButtonExample.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
